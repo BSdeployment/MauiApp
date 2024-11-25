@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiYouTubeDownload.MainPage"
+             xmlns:pages="clr-namespace:MauiYouTubeDownload">
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Encryption Demo"
+                   HorizontalTextAlignment="Center"
+                   FontSize="30"
+                   TextColor="BlueViolet"
+                   FontAttributes="Bold"
+                   Margin="20"
+                   />
+
+            <Label HorizontalTextAlignment="Center" Text="This app can use for encrypte/decrypte text"/>
+            <Label HorizontalTextAlignment="Center" Text="this use in aes elg"/>
+          
+
+        </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" 
+                             HorizontalOptions="Center" Grid.Row="1"
+                         Spacing="20"
+                           >
+                <Button Text="Encrypre" x:Name="btn_go_enc" Clicked="btn_go_enc_Clicked"
+                            HorizontalOptions="CenterAndExpand"
+                            Padding="25,15"
+                   VerticalOptions="Center"/>
+                
+                        <Button Text="Decrypre" x:Name="btn_go_dec" Clicked="btn_go_dec_Clicked"
+                                HorizontalOptions="CenterAndExpand"
+                                 Padding="25,15"/>
+            <Button Text="About Me"
+         Background="Transparent"
+         HorizontalOptions="Center"
+         BorderColor="Transparent"
+         TextColor="Blue"
+         Padding="0,0"
+         MinimumHeightRequest="0"
+         Margin="0"
+         VerticalOptions="Center"
+         x:Name="btn_about_me"
+                    Clicked="btn_about_me_Clicked"
+         />
+
+        </StackLayout>
+
+        <Grid Grid.Row="2" Background="BlueViolet"  >
+            <StackLayout VerticalOptions="Center">
+                <Label Text="By Bs Dot Net"
+             TextColor="White"
+             FontAttributes="Bold"
+             HorizontalTextAlignment="Center"/>
+               
+                <Label Text="{OnPlatform Android=Android-app, WinUI=Windows-app}"
+             TextColor="White"
+             FontAttributes="Bold"
+             HorizontalTextAlignment="Center"/>
+            </StackLayout>
+           
+
+       
+
+        </Grid>
+
+    </Grid>
+    
+    
+    
+       
+
+       
+  
+   
+        
+    
+
+
+</ContentPage>

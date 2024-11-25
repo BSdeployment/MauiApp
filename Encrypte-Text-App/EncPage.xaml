@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiYouTubeDownload.EncPage"
+             Title="EncPage">
+
+   
+    
+    <VerticalStackLayout Padding="15">
+        <Label 
+            HorizontalTextAlignment="Center"
+            FontAttributes="Bold"
+            FontSize="25"
+            Margin="0,30,0,0"
+            TextColor="BlueViolet"
+            Text="Encrypte Text Using Aes Elgorithm"/>
+        <Label 
+            HorizontalTextAlignment="Center"
+            FontSize="18"
+            FontAttributes="Bold"
+            Margin="0,40,0,0"
+            Text="Text To Encrypte"/>
+        <Entry x:Name="txt_text_enc" Placeholder="Text Here" Keyboard="Default" 
+               MaximumWidthRequest="300">
+          
+        </Entry>
+        <Label 
+            HorizontalTextAlignment="Center"
+            FontSize="18"
+            FontAttributes="Bold"
+            Margin="0,40,0,0"
+            Text="Secret Key"/>
+        <Entry x:Name="txt_key_enc"  Placeholder="Key Here" MaximumWidthRequest="300"/>
+        <Button x:Name="btn_gen" Text="Generate" Margin="0,20,0,0" HorizontalOptions="Center"
+               Clicked="btn_gen_Clicked"/>
+
+
+        <Label IsVisible="False" HorizontalTextAlignment="Center" 
+    Text="Result is:" x:Name="lbl_res"/>
+            <Editor   IsVisible="False" HorizontalTextAlignment="Center"
+       x:Name="lbl_res_enc"
+       />
+            <Button x:Name="btn_download" Clicked="btn_download_Clicked" IsVisible="False"  Text="Download" HorizontalOptions="Center"/>
+        
+        
+        
+    </VerticalStackLayout>
+</ContentPage>

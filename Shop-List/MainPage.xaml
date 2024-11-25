@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiShop.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local_services="clr-namespace:MauiShop.Servuces"
+             >
+   
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Label Text="Shoping List"
+                              FontAttributes="Bold"
+                              FontSize="35"
+                              TextColor="BlueViolet"
+                              HorizontalTextAlignment="Center"
+                              />
+                                
+                <Button Text="Add" x:Name="btn_add" Clicked="btn_add_Clicked" HorizontalOptions="Center"
+                        
+                        Margin="0,10,0,10"/>
+
+
+            </StackLayout>
+
+            <StackLayout Padding="5"    Grid.Row="1" HorizontalOptions="Center">
+                <ListView   x:Name="my_list" HeightRequest="360" HorizontalOptions="CenterAndExpand" MaximumWidthRequest="300"   >
+                        <ListView.Header>
+                            <Label Text="Full List"
+      
+      FontSize="20"
+      FontAttributes="Bold"
+      TextColor="BlueViolet"
+      HorizontalTextAlignment="Center"
+      />
+                        </ListView.Header>
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell>
+                                <StackLayout Margin="0,1" >
+                               
+
+          
+                                  
+                                       
+                                        <Grid Padding="10" FlowDirection="RightToLeft">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Column="0"   Text="{Binding Name}" VerticalOptions="Center" Margin="10,0"/>
+                                            <Button Grid.Column="1" Text="x"
+                                                         Padding="25,5"
+                                                         MinimumHeightRequest="0"
+                                                         MinimumWidthRequest="0"
+                                                         HorizontalOptions="End"
+                                                         TextColor="White"
+                                                         VerticalOptions="Center"
+                                                    x:Name="btn_remove"
+                                                    CommandParameter="{Binding Id}"
+                                                    Clicked="btn_remove_Clicked"
+                                                   
+                                                                           
+                                                         />
+                                        </Grid>
+                                   
+
+                                </StackLayout>
+                            </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+               
+
+            
+          
+            
+            
+
+            <StackLayout Grid.Row="2" Background="BlueViolet">
+                <Label 
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0"
+                    Text="By Bs DotNet"/>
+                
+                <Label 
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                   
+                   
+                    Text="{OnPlatform Android=Android-App,WinUI=Win-App}"/>
+               
+            </StackLayout>
+        </Grid>
+       
+    </ScrollView>
+
+</ContentPage>

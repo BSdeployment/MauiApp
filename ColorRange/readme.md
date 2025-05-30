@@ -57,3 +57,13 @@ Note: Hue values wrap around at 360.
 
 📄 License
 This project is open source and available under the MIT License.
+
+
+<img src="https://github.com/BSdeployment/MauiApp/blob/main/ColorRange/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202025-05-30%20181802.png" height="400"/>
+
+<img src="https://github.com/BSdeployment/MauiApp/blob/main/ColorRange/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202025-05-30%20181816.png" height="400"/>
+
+
+
+
+>ןצע

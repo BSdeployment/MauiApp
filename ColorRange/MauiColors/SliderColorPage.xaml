@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiColors.SliderColorPage"
+             Title="Check Color Range"
+             x:Name="current_page"
+             
+             >
+    <VerticalStackLayout>
+
+        <VerticalStackLayout Padding="20" MaximumWidthRequest="300">
+            <Label Text="{Binding ColorName}" FontSize="20" HorizontalOptions="Center" Margin="0,10,0,10" FontAttributes="Bold" TextColor="{Binding ColorName}" Padding="5" BackgroundColor="LightGray"/>
+
+            <Label Text="Values is:" HorizontalOptions="Center"/>
+            <Label Text="{Binding RangeAsString}" HorizontalOptions="Center"/>
+
+            <BoxView x:Name="ColorBox" HeightRequest="150" WidthRequest="150" BackgroundColor="Blue" />
+            <StackLayout   Orientation="Horizontal" HorizontalOptions="Center" Margin="0 ,10 ,0 ,0">
+                <Label Text="H  --" VerticalOptions="Center"  Margin="0, 0, 5, 0"/>
+                <Label FontAttributes="Bold" TextColor="BlueViolet" BindingContext="{x:Reference HueSlider}" Text="{Binding Value}" VerticalOptions="End" />
+            </StackLayout>
+           
+            <Slider x:Name="HueSlider"  ValueChanged="Slider_ValueChanged"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 0, 0, 0">
+                <Label Text="S  --"  Margin="0 ,0 ,5 ,0" VerticalOptions="Center"/>
+                <Label FontAttributes="Bold" TextColor="BlueViolet" BindingContext="{x:Reference SatSlider}" Text="{Binding Value}"/>
+            </StackLayout>
+            <Slider x:Name="SatSlider" Value="50" Minimum="0" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0 ,0 ,0 ,0">
+                <Label Text="V  --" Margin="0 ,0 ,5 ,0"/>
+                <Label FontAttributes="Bold" TextColor="BlueViolet"  BindingContext="{x:Reference ValSlider}" Text="{Binding Value}" HorizontalOptions="Center"/>
+            </StackLayout>
+            <Slider x:Name="ValSlider" Value="50" Minimum="0" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="RGB Value:"/>
+                <Label x:Name="lbl_rgb_value" Text=" " Margin="0,10,0,0" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="0,15,0,0">
+                <Label Text="HEX value:"/>
+                <Label Text=""   x:Name="lbl_hex_value" Margin="0,10,0,0" FontAttributes="Bold"/>
+            </StackLayout>
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

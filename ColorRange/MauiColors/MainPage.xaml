@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiColors.MainPage"
+             xmlns:class_lib="clr-namespace:ColorData;assembly=ColorData"
+             >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+           
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollView>
+            <VerticalStackLayout
+         Padding="30,0"
+         Spacing="25">
+
+                <Label
+             Text="Color Range"
+             Style="{StaticResource Headline}"
+             SemanticProperties.HeadingLevel="Level1" 
+             TextColor="BlueViolet"
+             FontAttributes="Bold"
+             />
+
+                <Label
+             FontSize="16"
+             FontAttributes="Bold"
+             Text="Color Range Viewer"
+             TextColor="BlueViolet"
+             Style="{StaticResource SubHeadline}"
+             SemanticProperties.HeadingLevel="Level2"
+             SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+
+                <ScrollView >
+                    <CollectionView ItemsSource="{Binding ColorRanges}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="class_lib:ColorRangeModel">
+                                <Border StrokeThickness="3" Padding="5" Margin="5">
+                                    <VerticalStackLayout Spacing="4">
+                                        <Label Text="{Binding ColorName}"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"/>
+
+                                        <!-- פס צבע להמחשה -->
+                                        <BoxView HeightRequest="30"
+                          WidthRequest="250"
+                          Color="{Binding ColorName}"  >
+
+                                            <BoxView.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                             Tapped="TapGestureRecognizer_Tapped"
+                                             NumberOfTapsRequired="1"
+                                             />
+
+                                            </BoxView.GestureRecognizers>
+
+                                        </BoxView>
+
+                                        <Label Text="Range:" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding RangeAsString}"
+                        HorizontalOptions="Center"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+
+
+
+
+
+
+                </ScrollView>
+
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <StackLayout  Background="BlueViolet" Grid.Row="1" >
+            <Label 
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0"
+                    Text="By Bs DotNet"/>
+
+            <Label 
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                   
+                   
+                    Text="{OnPlatform Android=Android-App,WinUI=Win-App}"/>
+
+        </StackLayout>
+    </Grid>
+   
+
+</ContentPage>
